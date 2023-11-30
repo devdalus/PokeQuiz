@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PokeQuiz</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div id="title-bar">
+        <a style="text-decoration: none;color: white;" href="./"><h1>PokeQuiz</h1></a>
+      </div>
+      <div id="card">
+        <div id="card-left">
+            <div id="card-name"></div>
+            <div id="card-image-container">
+                <img id="card-image">
+            </div>
+            <div id="card-types"></div>
+            <div id="card-id"></div>
+        </div>
+        <div id="card-middle">
+            <div id="card-attributes">
+                <div id="card-attribute-extra"></div>
+                <div id="card-attribute-generation"></div>
+                <div id="card-attribute-weight"></div>
+                <div id="card-attribute-height"></div>
+                <div id="card-attribute-abilities"></div>
+            </div>
+            <div id="card-forms"></div>
+        </div>
+        <div id="card-right">
+            <div id="card-evolution">
+                <div id="card-evolution-container">
+                    <div id="card-evolution-title">Evolves From</div>
+                    <div id="card-evo-from"></div>
+                    <div id="card-evolution-title">Evolves To</div>
+                    <div id="card-evo-to"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script src="scripts/card.js"></script>
+<script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+// render card based on ?id=number
+
+// get id from url
+var url_string = window.location.href;
+var url = new URL(url_string);
+var id = url.searchParams.get("id");
+
+card(id);
+
+</script>
+</body>
+</html>

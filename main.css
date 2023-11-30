@@ -1,0 +1,362 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Sans", "Trebuchet MS", Ubuntu, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+  
+#title-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+#side-bar {
+    background-color: #f1f1f1;
+    width: 200px;
+    float: left;
+    padding: 10px;
+}
+
+#main-section {
+    margin-left: 220px;
+    padding: 10px;
+}
+
+/* Additional CSS styles for the flashcard display */
+.flashcard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#card {
+    display: flex;
+    margin-top: 2em;
+    border: 1px solid #ccc;
+}
+
+@media screen and (min-width: 1000px) {
+    #card {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+}
+
+#card-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border-right: 1px solid #ccc;
+    padding: 1em;
+}
+
+#card-image {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+}
+
+#card-image-container {
+    width: 192px;
+}
+
+#card-types {
+    display: flex;
+    justify-content: center;
+}
+
+#card-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    padding: 1em;
+}
+
+#card-attributes {
+    /* Add styling for the card attributes container */
+}
+
+#card-attribute-extra,
+#card-attribute-generation,
+#card-attribute-weight,
+#card-attribute-height {
+    height: 1em;
+}
+
+#card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+#card-evolution {
+    height:25em;
+}
+
+#card-evo-to {
+    height: 10em;
+    overflow-y: scroll;
+}
+
+.card-form-container {
+    height: 15em;
+    overflow-y: scroll;
+}
+
+.card-type {
+    display: inline-block;
+    width: 66px;
+    margin-bottom: 4px;
+    background: #dbdbdb;
+    background-color: rgb(219, 219, 219);
+    border: 1px solid #a3a3a3;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.2);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 2px 2px rgba(0,0,0,.9);
+    text-transform: uppercase;
+}
+
+.card-type-normal {
+	background-color:#aa9
+}
+.card-type-fire {
+	background-color:#f42
+}
+.card-type-water {
+	background-color:#39f
+}
+.card-type-electric {
+	background-color:#fc3
+}
+.card-type-grass {
+	background-color:#7c5
+}
+.card-type-ice {
+	background-color:#6cf
+}
+.card-type-fighting {
+	background-color:#b54
+}
+.card-type-poison {
+	background-color:#a59
+}
+.card-type-ground {
+	background-color:#db5
+}
+.card-type-flying {
+	background-color:#89f
+}
+.card-type-psychic {
+	background-color:#f59
+}
+.card-type-bug {
+	background-color:#ab2
+}
+.card-type-rock {
+	background-color:#ba6
+}
+.card-type-ghost {
+	background-color:#66b
+}
+.card-type-dragon {
+	background-color:#76e
+}
+.card-type-dark {
+	background-color:#754
+}
+.card-type-steel {
+	background-color:#aab
+}
+.card-type-fairy {
+	background-color:#e9e
+}
+
+.card-ability-hidden {
+    background-color: rgb(150, 150, 150);
+}
+
+.card-ability-hidden .card-hidden {
+    background-color: #bbb !important;
+    color: #bbb !important;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+}
+
+#controls button {
+    font-size: 1.5em;
+    margin: 1em;
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+#back-button {
+    background-color: #dbdbdb;
+    color: #000;
+}
+
+#back-button:hover {
+    background-color: #ccc;
+}
+
+#back-button:active {
+    background-color: #aaa;
+}
+
+#reveal-button {
+    background-color: #f42;
+    color: #fff;
+}
+
+#reveal-button:hover {
+    background-color: #d32;
+}
+
+#reveal-button:active {
+    background-color: #b22;
+}
+
+#fail-button {
+    background-color: #a59;
+    color: #fff;
+}
+
+#fail-button:hover {
+    background-color: rgb(163, 69, 144);
+}
+
+#fail-button:active {
+    background-color: rgb(121, 37, 104);
+}
+
+#success-button {
+    background-color: #7c5;
+    color: #fff;
+}
+
+#success-button:hover {
+    background-color: #5a3;
+}
+
+#success-button:active {
+    background-color: #3a2;
+}
+
+.card-hidden {
+    filter: brightness(0) !important;
+    background-color: #000 !important;
+    cursor: pointer;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+/* img.card-hidden  {
+    filter: brightness(0) !important;
+    background-color: #000 !important;
+} */
+
+#card-name .card-hidden {
+    width: 12em;
+    display: inline-block;
+}
+
+.card-type-container {
+    width: 150px;
+    height: 40px;
+}
+
+#card-types p {
+    margin: 0;
+    padding: 0;
+}
+
+#card-id .card-hidden {
+    width: 4em;
+    display: inline-block;
+}
+
+#card-attribute-extra .card-hidden {
+    width: 10em;
+    display: inline-block;
+}
+
+#card-attribute-generation .card-hidden {
+    width: 10em;
+    display: inline-block;
+}
+
+#card-attribute-weight .card-hidden {
+    width: 10em;
+    display: inline-block;
+}
+
+#card-attribute-height .card-hidden {
+    width: 10em;
+    display: inline-block;
+}
+
+#card-attribute-abilities .card-hidden {
+    width: 10em;
+    height: 6em;
+    display: inline-block;
+}
+
+#card-attributes {
+    display: flex;
+    justify-content: space-between;
+}
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0.1em;
+    border-bottom: 1px solid #ccc;
+}
+
+td.right div{
+    text-align: right;
+}
+
+td.right {
+    text-align: right;
+}
+
+#card-forms .card-hidden {
+    height: 15em;
+    overflow-y: scroll;
+}
+
+#card-evo-from.card-hidden {
+    height: 10em;
+}
+
+#card-evo-to.card-hidden {
+    height: 10em;
+    overflow-y: scroll;
+}

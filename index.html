@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PokeQuiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta description="A flashcard site for learning Pokemon and their attributes.">
+    <meta keywords="pokemon, flashcards, learning, quiz, game">
+    <meta title="PokeQuiz">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div id="title-bar">
+    <h1>PokeQuiz</h1>
+  </div>
+  
+  <div id="side-bar">
+    <span>Options:</span>
+    <br><br>
+    <span>Hide:</span>
+    <div class="option">
+        <span>Name</span>
+        <input type="checkbox" id="name" checked>
+    </div>
+    <div class="option">
+        <span>Image</span>
+        <input type="checkbox" id="image" checked>
+    </div>
+    <div class="option">
+        <span>Types</span>
+        <input type="checkbox" id="types" checked>
+    </div>
+    <div class="option">
+        <span>ID</span>
+        <input type="checkbox" id="id">
+    </div>
+    <br>
+    <div class="option">
+        <span>Category</span>
+        <input type="checkbox" id="extra">
+    </div>
+    <div class="option">
+        <span>Gen</span>
+        <input type="checkbox" id="generation">
+    </div>
+    <div class="option">
+        <span>Weight</span>
+        <input type="checkbox" id="weight">
+    </div>
+    <div class="option">
+        <span>Height</span>
+        <input type="checkbox" id="height">
+    </div>
+    <div class="option">
+        <span>Abilities</span>
+        <input type="checkbox" id="abilities">
+    </div>
+    <br>
+    <div class="option">
+        <span>Forms</span>
+        <input type="checkbox" id="forms" checked>
+    </div>
+    <br>
+    <div class="option">
+        <span>Evolutions</span>
+        <input type="checkbox" id="evolutions" checked>
+    </div>
+  </div>
+  
+  <div id="main-section">
+    
+    
+    <div id="flashcard-display">
+        <!-- left side: picture with two types under | middle: display for (baby, legendary, or mythical), generation, weight, height | right side: evolution on top, forms below   -->
+        <div id="card">
+            <div id="card-left">
+                <div id="card-name"></div>
+                <div id="card-image-container">
+                    <img id="card-image">
+                </div>
+                <div id="card-types"></div>
+                <div id="card-id"></div>
+            </div>
+            <div id="card-middle">
+                <div id="card-attributes">
+                    <table>
+                        <tr>
+                            <td>Category</td>
+                            <td class="right" id="card-attribute-extra"></td>
+                        </tr>
+                        <tr>
+                            <td>Gen</td>
+                            <td class="right" id="card-attribute-generation"></td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td class="right" id="card-attribute-weight"></td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td class="right" id="card-attribute-height"></td>
+                        </tr>
+                        <tr>
+                            <td>Abilities</td>
+                            <td class="right" id="card-attribute-abilities"></td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="padding: 0; margin: 0;">Forms:</p>
+                <div id="card-forms"></div>
+            </div>
+            <div id="card-right">
+                <div id="card-evolution">
+                    <div id="card-evolution-container">
+                        <div id="card-evolution-title">Evolves From</div>
+                        <div id="card-evo-from"></div>
+                        <div id="card-evolution-title">Evolves To</div>
+                        <div id="card-evo-to"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button id="back-button">Back</button>
+        <button id="reveal-button">Reveal All</button>
+        <button id="fail-button">Fail</button>
+        <button id="success-button">Success</button>
+
+    </div>
+    </div>
+    <script src="scripts/card.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/data.js"></script>
+    <script>
+        main();
+    </script>
+</body>
+</html>
