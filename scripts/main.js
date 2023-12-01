@@ -57,19 +57,3 @@ async function main() {
 
     createPartiallyHiddenCard(selectCard());
 }
-
-getElem("success-button").onclick = function() {
-    createPartiallyHiddenCard(selectCard());
-}
-
-getElem("fail-button").onclick = function() {
-    createPartiallyHiddenCard(selectCard());
-}
-
-getElem("back-button").onclick = function() {
-    if(cardHistory.length === 0) {
-        return;
-    }
-    c = cardHistory.pop();
-    createPartiallyHiddenCard(c);
-}

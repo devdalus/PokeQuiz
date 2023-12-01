@@ -11,7 +11,8 @@
 </head>
 <body>
   <div id="title-bar">
-    <h1>PokeQuiz</h1>
+    <div class="title-div"><a href="./"><h1>PokeQuiz</h1></a></div>
+    <div class="title-div"><a href="./typechart.html"><h3>TypeQuiz</h3></a></div>
   </div>
   
   <div id="side-bar">
@@ -135,6 +136,23 @@
     <script src="scripts/data.js"></script>
     <script>
         main();
+
+        
+        getElem("success-button").onclick = function() {
+            createPartiallyHiddenCard(selectCard());
+        }
+
+        getElem("fail-button").onclick = function() {
+            createPartiallyHiddenCard(selectCard());
+        }
+
+        getElem("back-button").onclick = function() {
+            if(cardHistory.length === 0) {
+                return;
+            }
+            c = cardHistory.pop();
+            createPartiallyHiddenCard(c);
+        }
     </script>
 </body>
 </html>
