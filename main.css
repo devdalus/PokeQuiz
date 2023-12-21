@@ -13,9 +13,9 @@ body {
 
 #side-bar {
     background-color: #f1f1f1;
-    width: 200px;
+    width: 270px;
     float: left;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
 }
 
 #main-section {
@@ -59,7 +59,6 @@ body {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
     image-rendering: optimize-contrast;
 }
 
@@ -368,4 +367,8 @@ td.right {
 .title-div a {
     color: #fff;
     text-decoration: none;
+}
+
+.hidden {
+    display: none;
 }
