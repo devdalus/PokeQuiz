@@ -5,9 +5,11 @@ const filterData = {
     types: { normal: "Normal", fire: "Fire", water: "Water", electric: "Electric", grass: "Grass", ice: "Ice", fighting: "Fighting", poison: "Poison", ground: "Ground", flying: "Flying", psychic: "Psychic", bug: "Bug", rock: "Rock", ghost: "Ghost", dragon: "Dragon", dark: "Dark", steel: "Steel", fairy: "Fairy" },
     typing: { all: "All", mono: "Mono Type: 1", p1sAny: "Primary: 1, Secondary: Any", p1s2: "Primary: 1, Secondary: 2", oneOrTwo: "Ignore order, type 1 and type 2" },
     gens: { all: "All", gen1: "Gen 1", gen2: "Gen 2", gen3: "Gen 3", gen4: "Gen 4", gen5: "Gen 5", gen6: "Gen 6", gen7: "Gen 7", gen8: "Gen 8", gen9: "Gen 9" },
-    evo: { all: "All", noEvo: "No Evo", first: "First", middle: "Middle", final: "Final" }
+    evo: { all: "All", noEvo: "No Evo", first: "First", middle: "Middle", final: "Final" },
+    evoMethods: { all: "All", level: "Level", trade: "Trade", item: "Item", other: "Other" }
 };
-var filter = { category: filterData.categories.all, typing: filterData.typing.all, primaryType: filterData.types.normal, secondaryType: filterData.types.normal, gen: filterData.gens.all, evo: filterData.evo.all };
+
+var filter = { category: filterData.categories.all, typing: filterData.typing.all, primaryType: filterData.types.normal, secondaryType: filterData.types.normal, gen: filterData.gens.all, evo: filterData.evo.all, evoMethod: filterData.evoMethods.all };
 var possibleCards = [];
 var cardHistory = [];
 var curCard = 0;
@@ -109,6 +111,21 @@ function populatePossibleCards() {
             break;
         case filterData.evo.final:
             possibleCards = possibleCards.filter((e) => data[e].evo_from !== 0 && data[e].evo_to.length === 0);
+            break;
+    }
+
+    switch (filter.evoMethod) {
+        case filterData.evoMethods.level:
+            possibleCards = possibleCards.filter((e) => data[e].evo_method.includes("level-up")); 
+            break;
+        case filterData.evoMethods.trade:
+            possibleCards = possibleCards.filter((e) => data[e].evo_method.includes("trade"));
+            break;
+        case filterData.evoMethods.item:
+            possibleCards = possibleCards.filter((e) => data[e].evo_method.includes("use-item"));
+            break;
+        case filterData.evoMethods.other:
+            possibleCards = possibleCards.filter((e) => data[e].evo_method !== "" && !data[e].evo_method.includes("level-up") && !data[e].evo_method.includes("trade") && !data[e].evo_method.includes("use-item"));
             break;
     }
 

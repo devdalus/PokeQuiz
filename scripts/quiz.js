@@ -5,6 +5,7 @@ var fType1 = getElem("filter-type1");
 var fType2 = getElem("filter-type2");
 var fGen = getElem("filter-gen");
 var fEvo = getElem("filter-evo");
+var fEvoMeth = getElem("filter-evo-method");
 
 function createListeners() {
     getElem("success-button").onclick = function() {
@@ -53,6 +54,11 @@ function createListeners() {
         populatePossibleCards();
         createPartiallyHiddenCard(selectCard());
     }
+    fEvoMeth.onchange = function() {
+        filter.evoMethod = filterData.evoMethods[fEvoMeth.value];
+        populatePossibleCards();
+        createPartiallyHiddenCard(selectCard());
+    }
 }
         
 function createFilters() {
@@ -79,6 +85,10 @@ function createFilters() {
     for(var key in filterData.evo) {
         var opt = createElement("option", {value: key}, {innerHTML: filterData.evo[key]});
         fEvo.appendChild(opt);
+    }
+    for(var key in filterData.evoMethods) {
+        var opt = createElement("option", {value: key}, {innerHTML: filterData.evoMethods[key]});
+        fEvoMeth.appendChild(opt);
     }
 }
 
